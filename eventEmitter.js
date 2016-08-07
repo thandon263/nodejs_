@@ -1,18 +1,14 @@
-var EventEmitter = require('events').EventEmitter;
-
-var util = require('util'); //utilities module
-
-var Person = function(name) {
-
-    this.name = name;
-
-};
-
-//Person object inherits from the EventEmitter
-
-util.inherits(Person, EventEmitter);
+var Person = require('./Person');
 
 var ben = new Person("Ben Franklin");
+
+var george = new Person("George Washington");
+
+var george.on('speak', function(say) {
+
+    console.log(`${this.name}: ${said}`);
+
+});
 
 ben.on('speak', function(said){
 
@@ -21,3 +17,4 @@ ben.on('speak', function(said){
 });
 
 ben.emit('speak', "You may delay but time will not!");
+george.emit('speak', "It is far better to be alone than bad company!");
