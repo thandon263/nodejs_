@@ -1,10 +1,10 @@
-var Person = require('./Person');
+var Person = require('./lib/Person');
 
 var ben = new Person("Ben Franklin");
 
 var george = new Person("George Washington");
 
-var george.on('speak', function(say) {
+george.on('speak', function(say) {
 
     console.log(`${this.name}: ${said}`);
 
